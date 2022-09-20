@@ -1,6 +1,8 @@
 all:
   hosts:
     node0:
+      # eno1: 20:47:47:e7:92:3d
+      # wlp2s0: 94:65:9c:dd:4c:2b
       ansible_user: osaa
       ansible_host: 10.37.100.195
   children:
