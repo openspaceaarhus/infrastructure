@@ -1,0 +1,5 @@
+[nodes]
+node0        ansible_host=10.37.200.100
+node1        ansible_host=10.37.200.101
+node2        ansible_host=10.37.200.102
+node3        ansible_host=10.37.200.103

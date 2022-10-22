@@ -1,0 +1,14 @@
+---
+- hosts: all
+  remote_user: ansible
+  become: true
+  vars_files:
+  - vars/users.yml
+  vars:
+    ansible_ssh_private_key_file: ./certificates/bootstrap_ed25519
+  tasks:
+  - include_role:
+      name: users
+ 
+    
+  
