@@ -1,0 +1,23 @@
+all:
+  hosts:
+    node0:
+      # eno1: 20:47:47:e7:92:3d
+      # wlp2s0: 94:65:9c:dd:4c:2b
+      ansible_user: ansible
+      ansible_host: 10.37.200.100
+    node1:
+      ansible_user: ansible
+      ansible_host: 10.37.200.101
+    node2:
+      ansible_user: ansible
+      ansible_host: 10.37.200.101
+    node3:
+      ansible_user: ansible
+      ansible_host: 10.37.200.101
+  children:
+    kubernetes:
+      hosts:
+        node0:
+        node1:
+        node2:
+        node3:

@@ -63,7 +63,7 @@ Once you have handled the decryption you can run the playbooks
 ### Bootstrapping a new host
 
 ```bash
-ansible-playbook bootstrap.yml -i hosts -K -k
+ansible-playbook bootstrap.yml -K -k
 ```
 
 You will be asked for both the ssh password and the sudo password
@@ -75,7 +75,7 @@ Once the host is bootstrapped, its ready to actually get provisioned by ansible.
 ### Provisioning the host
 
 ```bash
-ansible-playbook main.yml -i hosts -K
+ansible-playbook main.yml -K
 ```
 
 This command assumes that the ansible user has been created by the bootstrapping, this wont work unless its bootstrapped first.
