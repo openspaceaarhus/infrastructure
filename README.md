@@ -4,15 +4,15 @@ This repository contains scripts and configuration for all our infrastructure.
 
 ## TODO
 
-- ~~[ ] Connectivity~~
-  - ~~[ ] Deploy VPN server~~
+- [ ] ~~Connectivity~~
+  - [ ] ~~Deploy VPN server~~
   - [ ] Configure VPN connection from Juniper firewall
 - [x] Networking
-  - ~~[ ] Configure VLANs~~
+  - [ ] ~~Configure VLANs~~
   - [x] Configure static leases for node0 - node3
 - [x] Provisioning
   - [x] Add SSH key to nodes
-  - ~~[ ] Enable passwordless sudo~~
+  - [ ] ~~Enable passwordless sudo~~
 - [x] Ansible playbook `bootstrap`
   - [ ] Disable password authentication
   - [ ] Install `dropbear-initramfs`
