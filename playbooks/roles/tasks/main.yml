@@ -10,7 +10,7 @@
     shell=/bin/bash 
     groups=sudo 
     append=yes
-    state=present
+    state={{ item.state|default('absent') }}
   loop: "{{ users }}"
   become: true
 
