@@ -9,6 +9,3 @@
   tasks:
   - include_role:
       name: users
- 
-    
-  
