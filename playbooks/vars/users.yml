@@ -1,5 +1,5 @@
 users:
-- username: 'zendk'
-  keyUrl: 'https://github.com/RobinOvergaard.keys'
-  passwordHash: '$6$6pQ2yrRDTSN8a$GcILzCBJoqU88xRdYQL3u35UBHtecdcDxF.odzSJMZCHK.Rw/dUD08eIfu4SBdvmpezzvVSrPz/M6OkiJH1.q.'
-  state: 'present'
+- username: zendk
+  keyUrl: https://github.com/RobinOvergaard.keys
+  passwordHash: $6$6pQ2yrRDTSN8a$GcILzCBJoqU88xRdYQL3u35UBHtecdcDxF.odzSJMZCHK.Rw/dUD08eIfu4SBdvmpezzvVSrPz/M6OkiJH1.q.
+  state: present
