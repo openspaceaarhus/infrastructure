@@ -1,0 +1,38 @@
+---
+nodes:
+  - address: 10.37.200.100
+    role:
+      - controlplane
+      - etcd
+      - worker
+  - address: 10.37.200.101
+    role:
+      - controlplane
+      - etcd
+      - worker
+  - address: 10.37.200.102
+    role:
+      - controlplane
+      - etcd
+      - worker
+  - address: 10.37.200.103
+    role:
+      - etcd
+      - worker
+
+ignore_docker_version: false
+
+enable_cri_dockerd: true
+
+cluster_name: openspaceaarhus
+
+kubernetes_version: v1.24.8-rancher1-1
+
+authentication:
+    strategy: x509
+    sans:
+      - "10.37.200.99"
+
+# Use `mode: none` to disable authorization
+authorization:
+    mode: rbac

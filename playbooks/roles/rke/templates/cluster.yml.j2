@@ -1,0 +1,28 @@
+---
+nodes:
+{% for host in groups['kubernetes'] %}
+  - address: {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+    role:
+{% if hostvars[host]['kubernetes_controlPlane'] == true %}
+      - controlplane
+{% endif %}
+      - etcd
+      - worker
+{% endfor %}
+
+ignore_docker_version: false
+
+enable_cri_dockerd: true
+
+cluster_name: openspaceaarhus
+
+kubernetes_version: v1.24.8-rancher1-1
+
+authentication:
+    strategy: x509
+    sans:
+      - "{{ vars['ha_address'] }}"
+
+# Use `mode: none` to disable authorization
+authorization:
+    mode: rbac

@@ -1,0 +1,15 @@
+vrrp_instance VI_{{ inventory_hostname }} {
+        state {% if hostvars[inventory_hostname]['keepalived_masterRole'] == true %}MASTER{% else %}BACKUP{% endif %}
+
+        interface {{ hostvars[inventory_hostname]['ansible_default_ipv4']['interface'] }}
+        virtual_router_id 100
+        priority {{ hostvars[inventory_hostname]['keepalived_priority']}}        
+        advert_int 1
+        authentication {
+              auth_type PASS
+              auth_pass 12345
+        }
+        virtual_ipaddress {
+              {{ vars.ha_address }}
+        }
+}

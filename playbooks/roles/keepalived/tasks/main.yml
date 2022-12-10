@@ -1,0 +1,11 @@
+---
+- name: Ensure keepalived etc folder exists
+  ansible.builtin.file:
+    path: /etc/keepalived
+    state: directory
+    mode: 0600
+
+- name: Generate keepalived config
+  template:
+    src: "keepalived.conf.j2"
+    dest: "/etc/keepalived/keepalived.conf"

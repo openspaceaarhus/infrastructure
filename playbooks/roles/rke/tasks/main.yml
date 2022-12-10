@@ -1,0 +1,7 @@
+---
+- name: Generate rke yaml
+  delegate_to: localhost
+  become: false
+  template:
+    src: "cluster.yml.j2"
+    dest: "../rke/cluster.yml"

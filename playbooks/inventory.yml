@@ -1,0 +1,29 @@
+all:
+  hosts:
+    node0:
+      ansible_host: 10.37.200.100
+    node1:
+      ansible_host: 10.37.200.101
+    node2:
+      ansible_host: 10.37.200.102
+    node3:
+      ansible_host: 10.37.200.103
+  children:
+    kubernetes:
+      hosts:
+        node0:
+          kubernetes_controlPlane: true
+          keepalived_masterRole: true
+          keepalived_priority: 100
+        node1:
+          kubernetes_controlPlane: true
+          keepalived_masterRole: false
+          keepalived_priority: 90
+        node2:
+          kubernetes_controlPlane: true
+          keepalived_masterRole: false
+          keepalived_priority: 80
+        node3:
+          kubernetes_controlPlane: false
+          keepalived_masterRole: false
+          keepalived_priority: 70
