@@ -1,3 +1,3 @@
-# The keypair for the ansible bootstrapping playbook
+# The keypair for the rke cluster config
 
-## The public and private key for ansible. the private key file is encrypted, which the _**cpt**_ extention also indicates
+## The public and private key for rke. the private key file is encrypted, which the _**cpt**_ extention also indicates
