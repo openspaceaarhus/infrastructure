@@ -2,12 +2,14 @@
 nodes:
 {% for host in groups['kubernetes'] %}
   - address: {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+    user: k8s
     role:
 {% if hostvars[host]['kubernetes_controlPlane'] == true %}
       - controlplane
-{% endif %}
       - etcd
+{% endif %}
       - worker
+    ssh_key_path: "../certificates/k8s_ed25519"
 {% endfor %}
 
 ignore_docker_version: false
@@ -22,6 +24,7 @@ authentication:
     strategy: x509
     sans:
       - "{{ vars['ha_address'] }}"
+      - "k8s.osaa.dk"
 
 # Use `mode: none` to disable authorization
 authorization:

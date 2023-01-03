@@ -1,24 +1,31 @@
 ---
 nodes:
   - address: 10.37.200.100
+    user: k8s
     role:
       - controlplane
       - etcd
       - worker
+    ssh_key_path: "../certificates/k8s_ed25519"
   - address: 10.37.200.101
+    user: k8s
     role:
       - controlplane
       - etcd
       - worker
+    ssh_key_path: "../certificates/k8s_ed25519"
   - address: 10.37.200.102
+    user: k8s
     role:
       - controlplane
       - etcd
       - worker
+    ssh_key_path: "../certificates/k8s_ed25519"
   - address: 10.37.200.103
+    user: k8s
     role:
-      - etcd
       - worker
+    ssh_key_path: "../certificates/k8s_ed25519"
 
 ignore_docker_version: false
 
@@ -32,6 +39,7 @@ authentication:
     strategy: x509
     sans:
       - "10.37.200.99"
+      - "k8s.osaa.dk"
 
 # Use `mode: none` to disable authorization
 authorization:
